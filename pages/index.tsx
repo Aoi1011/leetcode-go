@@ -1,9 +1,11 @@
 import React from "react";
+
 import type { NextPage } from "next";
 import Head from "next/head";
+import styled from "styled-components";
+
 import CreateAccount from "../components/CreateAccount";
 import RestoreAccount from "../components/RestoreAccount";
-import styled from "styled-components";
 
 const Home: NextPage = () => {
   return (
@@ -12,7 +14,10 @@ const Home: NextPage = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta charSet="utf-8" />
         <title>Wallet Tutorial</title>
-        <meta name="description" content="Web3 tutorial for Solana crypto wallet." />
+        <meta
+          name="description"
+          content="Web3 tutorial for Solana crypto wallet."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeTitle>

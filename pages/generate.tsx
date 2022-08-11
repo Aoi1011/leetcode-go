@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { NextPage } from "next";
 import { Button } from "antd";
 import Link from "next/link";
@@ -8,7 +9,7 @@ const Phrase: NextPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleLoading = () => {
-    setLoading(true)
+    setLoading(true);
   };
 
   return (

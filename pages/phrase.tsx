@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { NextPage } from "next";
-import { Button, Alert, Popconfirm } from "antd";
-import PhraseBox from "../components/PhraseBox";
-import { useGlobalState } from "../context";
-import { LoadingOutlined } from "@ant-design/icons";
-import { useRouter } from "next/router";
 
-// Import Bip39 to generate a phrase and convert it to a seed:
+import { NextPage } from "next";
+import { useRouter } from "next/router";
+import { Button, Alert, Popconfirm } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 import * as Bip39 from "bip39";
 import { Keypair } from "@solana/web3.js";
+
+import { useGlobalState } from "../context";
+import PhraseBox from "../components/PhraseBox";
 
 const Phrase: NextPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
