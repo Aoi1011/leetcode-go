@@ -45,13 +45,3 @@ event - compiled successfully
 ```
 
 You can now view the running application at [http://localhost:3000](http://localhost:3000)
-
-## 🔩 Designed by Figment Learn
-
-Our goal at [Figment Learn](https://learn.figment.io/) is to build the best resources for developers learning about and building in Web 3. We really hope you enjoy the tutorial and thanks for checking it out. **WAGMI!**
-
-Learn more about [Figment](https://figment.io/) and [Figment Learn](https://learn.figment.io/).
-
-[Join us on Discord](https://discord.com/invite/fszyM7K) if you have any feedback or questions!
-
--- The Figment Learn Team
