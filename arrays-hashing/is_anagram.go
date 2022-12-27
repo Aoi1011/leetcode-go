@@ -9,7 +9,7 @@ func IsAnagram(s string, t string) bool {
 
 	count := make([]int, 26)
 
-	for index, _ := range count {
+	for index := range count {
 		count[index] = 0
 	}
 
