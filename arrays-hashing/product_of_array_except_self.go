@@ -1,5 +1,6 @@
 package arrayshashing
 
+// time limit exceeded
 func productExceptSelf(nums []int) []int {
 	var res []int
 
@@ -15,6 +16,13 @@ func productExceptSelf(nums []int) []int {
 
 		res = append(res, total)
 	}
+
+	return res
+}
+
+// solution 1
+func productExceptSelf1(nums []int) []int {
+	var res []int
 
 	return res
 }
