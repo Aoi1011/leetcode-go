@@ -10,7 +10,7 @@ func TestTopKFrequent(t *testing.T) {
 	k := 2
 	ans := []int{1, 2}
 
-	res := topKFrequent(nums, k)
+	res := topKFrequent1(nums, k)
 
 	if !reflect.DeepEqual(ans, res) {
 		t.Errorf("Err #1: %v, %v", ans, res)

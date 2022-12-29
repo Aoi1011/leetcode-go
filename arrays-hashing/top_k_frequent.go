@@ -29,4 +29,66 @@ func topKFrequent(nums []int, k int) []int {
 	return res
 }
 
+func topKFrequent1(nums []int, k int) []int {
+	m := make(map[int]int)
+	max := 0
+
+	for _, v := range nums {
+		m[v] += 1
+		if m[v] > max {
+			max = m[v]
+		}
+	}
+
+	mm := make(map[int][]int)
+	for i, num := range m {
+		mm[num] = append(mm[num], i)
+	}
+
+	ret := []int{}
+	for i := max; i > 0; i-- {
+		if elem, ok := mm[i]; ok {
+			for _, v := range elem {
+				ret = append(ret, v)
+				if len(ret) == k {
+					return ret
+				}
+			}
+		}
+	}
+
+	return ret
+}
+
+func topKFrequent2(nums []int, k int) []int {
+	m := make(map[int]int)
+	max := 0
+
+	for _, num := range nums {
+		m[num] += 1
+		if m[num] > max {
+			max = m[num]
+		}
+	}
+
+	mm := make(map[int][]int)
+	for key, val := range m {
+		mm[val] = append(mm[val], key)
+	}
+
+	ret := []int{}
+	for i := max; i > 0; i-- {
+		if elem, ok := mm[i]; ok {
+			for _, v := range elem {
+				ret = append(ret, v)
+				if len(ret) == 2 {
+					return ret
+				}
+			}
+		}
+	}
+
+	return ret
+}
+
 // key, value = count
