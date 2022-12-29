@@ -81,7 +81,7 @@ func topKFrequent2(nums []int, k int) []int {
 		if elem, ok := mm[i]; ok {
 			for _, v := range elem {
 				ret = append(ret, v)
-				if len(ret) == 2 {
+				if len(ret) == k {
 					return ret
 				}
 			}
