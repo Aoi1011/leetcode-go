@@ -7,7 +7,7 @@ func isValidSudoku(board [][]byte) bool {
 
 	rows := make(map[int]byte)
 	columns := make(map[int]byte)
-	squares := make(map[Square]byte)
+	squares := make(map[string]byte)
 
 	for r := 0; r < 9; r++ {
 		for c := 0; c < 9; c++ {
@@ -15,22 +15,22 @@ func isValidSudoku(board [][]byte) bool {
 				continue
 			}
 
-			if _, rowOk := rows[r]; rowOk {
+			if rows[r] == board[r][c] {
 				return false
 			} else {
 				rows[r] = board[r][c]
 			}
 
-			if _, colOk := columns[c]; colOk {
+			if columns[c] == board[r][c] {
 				return false
 			} else {
 				columns[c] = board[r][c]
 			}
 
-			if _, squOk := squares[Square{r / 3, c / 3}]; squOk {
+			if squares["found in grid"+string(byte(r/3))+"-"+string(byte(c/3))] == board[r][c] {
 				return false
 			} else {
-				squares[Square{r / 3, c / 3}] = board[r][c]
+				squares["found in grid"+string(byte(r/3))+"-"+string(byte(c/3))] = board[r][c]
 			}
 
 		}
