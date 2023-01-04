@@ -57,3 +57,29 @@ func longestConsecutive2(nums []int) int {
 
 	return ans
 }
+
+func longestConsecutive3(nums []int) int {
+	m := make(map[int]bool)
+	longest := 0
+
+	for _, num := range nums {
+		m[num] = true
+	}
+
+	for _, num := range nums {
+		if !m[num-1] {
+			length := 0
+
+			for m[num+length] {
+				length += 1
+			}
+
+			if length > longest {
+				longest = length
+			}
+
+		}
+	}
+
+	return longest
+}
