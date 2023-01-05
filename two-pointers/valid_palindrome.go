@@ -1,31 +1,20 @@
 package twopointers
 
 import (
-	"bytes"
-	"fmt"
+	"regexp"
 	"strings"
 )
 
 func IsPalindrome(s string) bool {
-
 	removedSpace := strings.ReplaceAll(s, " ", "")
-	fixed := strings.ToLower(removedSpace)
+	lower := strings.ToLower(removedSpace)
+	fixed := regexp.MustCompile(`[^a-zA-Z0-9 ]+`).ReplaceAllString(lower, "")
 
-	res := ""
-
-	for _, c := range fixed {
-		if bytes.ContainsRune([]byte{':', ','}, c) {
-			continue
+	for i := 0; i < len(fixed)/2; i++ {
+		if fixed[i] != fixed[len(fixed)-i-1] {
+			return false
 		}
-
-		res = res + string(c)
 	}
 
-	fmt.Println(res)
-
-	if res == "amanaplanacanalpanama" {
-		return true
-	} else {
-		return false
-	}
+	return true
 }
