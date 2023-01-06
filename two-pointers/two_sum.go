@@ -5,13 +5,17 @@ func twoSum(numbers []int, target int) []int {
 	m := make(map[int]int)
 
 	for index, num := range numbers {
-		m[num] = index
+		m[num] = index + 1
 	}
 
 	for index, num := range numbers {
 		diff := target - num
 		if valIndex, found := m[diff]; found {
-			res = append(res, index, valIndex)
+			res = append(res, index+1, valIndex)
+		}
+
+		if len(res) == 2 {
+			break
 		}
 	}
 
