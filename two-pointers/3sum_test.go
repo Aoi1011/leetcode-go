@@ -12,7 +12,7 @@ func Test3Sum1(t *testing.T) {
 	output = append(output, []int{-1, -1, 2})
 	output = append(output, []int{-1, 0, 1})
 
-	res := threeSum(nums)
+	res := threeSum2(nums)
 
 	assert.Equal(t, output, res, "Pass")
 }
@@ -21,7 +21,7 @@ func Test3Sum2(t *testing.T) {
 	nums := []int{0, 1, 1}
 	var output [][]int
 
-	res := threeSum(nums)
+	res := threeSum2(nums)
 
 	assert.Equal(t, output, res, "Pass")
 }
@@ -31,7 +31,7 @@ func Test3Sum3(t *testing.T) {
 	var output [][]int
 	output = append(output, []int{0, 0, 0})
 
-	res := threeSum(nums)
+	res := threeSum2(nums)
 
 	assert.Equal(t, output, res, "Pass")
 }
